@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Markdown Slides</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>Markdown Slides</h1><button id="presentButton">Present Slides</button></header>
+<main id="editorPage">
+<section class="panel">
+<h2>Markdown File</h2>
+<p>Use three dashes (---) on a separate line to start a new slide.</p>
+<textarea id="markdownInput" spellcheck="false"># Welcome
+## Markdown Slides
+
+Write your slide content here.
+
+- Create slides using Markdown
+- Edit the text to change slides
+- Your slides are saved in this browser
+
+---
+# Second Slide
+## Edit and Save
+
+Change the Markdown on the left. The preview updates automatically.
+
+---
+# Third Slide
+## Present
+
+Use the left and right buttons to move between slides.</textarea>
+<div class="buttons"><button id="saveButton">Save Slides</button><button id="resetButton">Reset Example</button></div>
+<p id="saveMessage"></p>
+</section>
+<section class="panel">
+<h2>Live Preview</h2>
+<div class="slide" id="previewSlide"></div>
+<div class="controls">
+<button id="prevButton">← Left</button><span id="slideCount">1 / 1</span>
+<button id="nextButton">Right →</button><button id="previewFullButton">Full Screen</button>
+</div>
+</section>
+</main>
+<main id="presentationPage" class="hidden">
+<div class="slide presentationSlide" id="presentationSlide"></div>
+<div class="controls">
+<button id="presentationPrevButton">← Left</button><span id="presentationCount">1 / 1</span>
+<button id="presentationNextButton">Right →</button><button id="exitPresentButton">Exit Full Screen</button>
+</div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

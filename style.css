@@ -1,0 +1,188 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f4f7;
+    color: #222;
+}
+
+header {
+    background: #263746;
+    color: white;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 22px;
+}
+
+button {
+    padding: 9px 13px;
+    border: 0;
+    border-radius: 4px;
+    background: #2878c8;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:disabled {
+    background: #b7bec5;
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background: #1d5f9e;
+}
+
+#editorPage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    padding: 18px;
+}
+
+.panel {
+    background: white;
+    padding: 16px;
+    border-radius: 6px;
+    box-shadow: 0 1px 5px #00000018;
+    min-width: 0;
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.panel p {
+    font-size: 13px;
+    color: #555;
+}
+
+textarea {
+    display: block;
+    width: 100%;
+    height: 55vh;
+    resize: vertical;
+    padding: 12px;
+    border: 1px solid #b8c0c8;
+    border-radius: 4px;
+    font-family: Consolas, monospace;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+#resetButton {
+    background: #687784;
+}
+
+#saveMessage {
+    min-height: 16px;
+}
+
+.slide {
+    background: white;
+    border: 1px solid #d4d9df;
+    border-radius: 5px;
+    min-height: 55vh;
+    padding: 35px;
+    overflow-wrap: anywhere;
+}
+
+.slide h1 {
+    font-size: 34px;
+    margin-top: 0;
+    color: #183c5a;
+}
+
+.slide h2 {
+    font-size: 24px;
+    color: #2878c8;
+}
+
+.slide p, .slide li {
+    font-size: 19px;
+    line-height: 1.6;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+#slideCount, #presentationCount {
+    min-width: 55px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#presentationPage {
+    padding: 18px;
+}
+
+.presentationSlide {
+    min-height: 78vh;
+    padding: 6vh 7vw;
+}
+
+.presentationSlide h1 {
+    font-size: clamp(30px, 5vw, 58px);
+}
+
+.presentationSlide h2 {
+    font-size: clamp(22px, 3vw, 38px);
+}
+
+.presentationSlide p, .presentationSlide li {
+    font-size: clamp(18px, 2vw, 27px);
+}
+
+body.presenting {
+    background: #111820;
+}
+
+body.presenting #presentationPage {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+body.presenting .presentationSlide {
+    min-height: 82vh;
+}
+
+@media (max-width: 800px) {
+    #editorPage {
+        grid-template-columns: 1fr;
+    }
+
+    textarea {
+        height: 40vh;
+    }
+
+    .slide {
+        min-height: 40vh;
+        padding: 22px;
+    }
+}
